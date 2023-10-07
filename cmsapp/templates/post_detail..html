@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Detail</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Post Detail</h1>
+        <h2>Title: {{ post.title }}</h2>
+        <p>Description: {{ post.description }}</p>
+        <p>Content: {{ post.content }}</p>
+        <p>Owner: {{ post.owner.user.username }}</p>
+        <p>Creation Date: {{ post.creation_date }}</p>
+        <p>Is Public: {{ post.is_public }}</p>
+        <a href="{% url 'like-post' post.id %}" class="btn btn-primary">Like</a>
+        <a href="{% url 'post-list' %}" class="btn btn-secondary">Back to List</a>
+    </div>
+</body>
+</html>
